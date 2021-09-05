@@ -98,5 +98,53 @@ class RequestUserModel extends CI_Model
     }
 
 
+    /* get document type */
+
+
+    public function getDocumentType()
+	{
+        //SELECT id ,descripcion, appDocument  FROM jefplamy_sci_db_dev.categoria_documento;
+
+			$this->db->select("categoria_documento.id as IdTipoDocumento, categoria_documento.descripcion as DescripcionDocumento, categoria_documento.appDocument as IsMovilDocument");
+			$this->db->from('categoria_documento');
+			$this->db->where('categoria_documento.appDocument', 1);
+
+			$query = $this->db->get();
+
+			$Images = json_decode(json_encode($query->result()), true);
+
+			return $Images;
+	}
+
+    public function SentEmail($email2)
+	{
+        $config = Array(        
+            'protocol' => 'smtp',
+            'smtp_host' => 'mail.asdn.gob.do',
+            'smtp_port' => 465,
+            'smtp_user' => 'helpdesk@asdn.gob.do',
+            'smtp_pass' => 'ITsoporte2021',
+            'smtp_timeout' => '4',
+            'mailtype'  => 'html', 
+            'charset'   => 'iso-8859-1'
+        );
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n"); 
+        $from_email = "helpdesk@asnd.gob.do"; 
+        $this->email->from($from_email, 'Name'); 
+        $this->email->to($email2);
+        $this->email->subject('email subject');
+        $message = 'email body';                 
+        $this->email->message($message);
+
+        var_dump( $this->email->send());
+        
+       // $this->email->send();
+	}
+
+
+
+
+
 
 }
