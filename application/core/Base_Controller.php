@@ -77,7 +77,7 @@ class Base_Controller extends CI_Controller
         $config['smtp_crypto'] = 'ssl';
         $config['smtp_port'] = '465';
         $config['smtp_user'] = 'helpdesk@asdn.gob.do';
-        $config['smtp_pass'] = 'ITsoporte2021';
+        $config['smtp_pass'] = 'jE*gql1H{NY6';
 
         $this->email->initialize($config);
         $this->email->from($fromEmail, $nametFrom);
