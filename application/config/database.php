@@ -72,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-//$username = 'jefplamy_sci';$hostname = 'localhost';$password = 'V_@!Dz]s$k7!';$debug = 'development';$database='jefplamy_sci_db';
-$username = 'jefplamy_sci_dev';$hostname = '162.241.216.134';$password = 'sci_dev#';$debug = 'production';$database='jefplamy_sci_db_dev'; 
+$username = 'jefplamy_sci';$hostname = 'localhost';$password = 'V_@!Dz]s$k7!';$debug = 'development';$database='jefplamy_sci_db';
+//$username = 'jefplamy_sci_dev';$hostname = '162.241.216.134';$password = 'sci_dev#';$debug = 'production';$database='jefplamy_sci_db_dev'; 
 //$username = 'root';$hostname = 'localhost';$password = '';$debug = 'production';$database='jefplamy_sci_db';
   
 $db['default'] = array(
