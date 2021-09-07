@@ -504,6 +504,9 @@ class RequestUsersWebServer extends RestController
             if(!empty($password)){
                 $userData['password'] = md5($password);
             }
+
+            $userData['NeedResetPass'] = 0;
+
             $update = $this->user->update($userData, $id);
             
             // Check if the user data is updated
